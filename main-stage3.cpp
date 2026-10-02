@@ -13,8 +13,30 @@
 
 using namespace std;
 
+
+
+
 int main() {
     // You can use this main() to run your own analysis or initial testing code.
-    cout << "If you are seeing this, you have successfully run main!" << endl;
+    const int trialcount = 10;
+    
+    cout << "standard stack" << endl;
+    for(int i = 10000 ;i<=100000;i+=10000){
+        double acc = 0.0;
+        for(int j = 0 ;j<trialcount;j++){
+            acc += time_n_pushes(i);
+        }
+        cout << acc/trialcount << endl;
+    }
+
+    cout << "bad stack" << endl;
+    for(int i = 10000 ;i<=100000;i+=10000){
+        double acc = 0.0;
+        for(int j = 0 ;j<trialcount;j++){
+            acc += time_n_pushes_bad(i);
+        }
+        cout << acc/trialcount << endl;
+    }
+    
     return 0;
 }

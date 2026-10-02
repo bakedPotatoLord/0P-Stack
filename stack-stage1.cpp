@@ -10,6 +10,30 @@
 
 using namespace std;
 
-string stack::top() {
-    return "Hello";
+stack::stack()  {
+    len = 0;
+    capacity = 4;
+    data = new string[capacity];
 }
+
+string stack::top() {
+    return data[len-1];
+}
+
+void stack::push(const string &s) {
+    if (len == capacity) {
+        capacity *= 2;
+        string *new_data = new string[capacity];
+        for (int i = 0; i < len; i++) {
+            new_data[i] = data[i];
+        }
+        delete [] data;
+        data = new_data;
+    }
+    data[len++] = s;
+}
+
+void stack::pop() {
+    len--;
+}
+

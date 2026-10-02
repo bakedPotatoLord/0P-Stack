@@ -15,6 +15,18 @@ using namespace std;
 
 int main() {
     // You can use this main() to run your own analysis or initial testing code.
-    cout << "If you are seeing this, you have successfully run main!" << endl;
+    cout << "If you are seeing this, you are a bozo" << endl;
+
+    stack s;
+
+    s.push("hello");
+    s.push("world");
+
+    cout << s.size() << endl;
+    cout << s.top() << endl;
+    s.pop();
+    cout << s.top() << endl;
+    s.pop();
+
     return 0;
 }
